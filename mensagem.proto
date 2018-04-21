@@ -1,0 +1,25 @@
+syntax="proto2";
+message Mensagem {
+  required int32  id_cliente=1; 
+  required int32  id_mensagem=2; 
+  required string dados=3;
+  required string hmac=4;
+	
+  required string sender_name=5;
+	required string sender_email=6;
+	required string sender_nickname=7;
+	
+	required string receiver_name=8;
+	required string receiver_email=9;
+	required string receiver_nickname=10;
+
+	enum Msg_type {
+		REQUEST = 0;
+		REPLY = 1;
+	}
+
+	required Msg_type msg_type=11;
+	optional int64 thread_id=12;
+	required string subject=13;
+	
+}
